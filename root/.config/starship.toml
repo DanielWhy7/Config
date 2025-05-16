@@ -1,0 +1,38 @@
+format="""
+$directory\
+$character\
+$git_branch\
+"""
+
+add_newline=false
+
+[character]
+success_symbol='[#](bold green)'
+error_symbol='[#](bold red)'
+vimcmd_symbol='[v](bold green)'
+
+[directory]
+format='[$path](fg:white) '
+read_only='  '
+truncation_length=4
+truncation_symbol='~/…/'
+truncate_to_repo=true
+
+[directory.substitutions]
+'Document' = ''
+'Download' = ''
+'Music' = ''
+'Picture' = ''
+'Video' = ''
+'Project' = '󱌢'
+'School' = '󰑴'
+'www' = ''
+'.config' = ''
+
+[git_branch]
+style = 'fg:white'
+format = '$branch(:$remote_branch)($style) '
+truncation_length=20
+
+[package]
+disabled=true

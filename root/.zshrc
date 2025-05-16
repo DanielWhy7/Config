@@ -1,20 +1,16 @@
 # launch tmux
-if [ -z "$TMUX" ]; then
-    exec tmux new-session -A -s def
+if [ -z '$TMUX' ]; then
+    tmux new-session
 fi
 # useful abbreviations
 alias s='sudo'
-if [ -n "TERMUX_VERSION" ]; then
-  alias su='tsu'
-  alias upm='pkg'
-  #alias pkg='upm'
-elif grep -q 'ID=arch' /etc/os-release 2>/dev/null; then
-  alias upm='pacman'
-fi
-alias u='upm'
+alias su='tsu'
 alias n='nvim'
 alias c='clear'
 alias v='vim'
+alias upm='pkg'
+alias u='upm'
+#alias pkg='upm'
 alias l='ls'
 alias t='touch'
 alias k='cat'
@@ -23,10 +19,10 @@ alias e='exit'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias zshrc='n ~/.zshrc'
-alias gitconfig='n ~/.gitconfig'
-alias sstoml='n ~/.config/starship.toml'
-export proj="$HOME/Document/Project"
+alias zshrc='nvim ~/.zshrc'
+alias gitconfig='nvim ~/.gitconfig'
+alias sstoml='nvim ~/.config/starship.toml'
+export projects='/data/data/com.termux/files/home/Document/Project'
 # zinit plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -50,10 +46,10 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-# Autocomplete
-zstyle :compinstall filename '~/zshrc'
-autoload -Uz compinit
-compinit
+# IDK
+#zstyle :compinstall filename '~/zshrc'
+#autoload -Uz compinit
+#compinit
 
 # vim mode
 set -o vi
