@@ -17,3 +17,4 @@ opt.list=true
 opt.mouse="a"
 opt.number=true
 opt.relativenumber=true
+vim.cmd'colorscheme wildcharm'
