@@ -1,7 +1,12 @@
 format="""
 $directory\
-$character\
 $git_branch\
+$git_metrics\
+$character\
+"""
+
+right_format = """
+$cmd_duration\
 """
 
 add_newline=false
@@ -12,7 +17,7 @@ error_symbol='[#](bold red)'
 vimcmd_symbol='[v](bold green)'
 
 [directory]
-format='[$path](fg:white) '
+format='[$path](fg:blue) '
 read_only='  '
 truncation_length=4
 truncation_symbol='~/…/'
@@ -30,9 +35,23 @@ truncate_to_repo=true
 '.config' = ''
 
 [git_branch]
-style = 'fg:white'
-format = '$branch(:$remote_branch)($style) '
+style = 'fg:green'
+format = '[$branch(:$remote_branch)]($style) '
 truncation_length=20
+
+[git_status]
+format = '[$all_status]($style)'
+style = "fg:red"
+
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style) "
+added_style = "fg:blue"
+deleted_style = "fg:red"
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "fg:bright-white"
 
 [package]
 disabled=true
