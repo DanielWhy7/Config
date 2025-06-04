@@ -1,2 +1,6 @@
 theme = catppuccin-frappe
 window-decoration = false
+
+keybind = ctrl+shift+a=unbind
+keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+l=unbind
