@@ -34,7 +34,6 @@ alias zshrc='n ~/.zshrc'
 alias gitconfig='n ~/.gitconfig'
 alias sstoml='n ~/.config/starship.toml'
 alias fman="bash -c 'compgen -c' | fzf | xargs man"
-export proj="$HOME/Document/Project"
 # zinit plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
